@@ -21,12 +21,12 @@ body {
 
 .gamePlay {
 	width: 504px;
-	height: 330px;
+	height: 390px;
 	float: left;
-	background-color: #B92626;
+	background-color: #aaa;
 	padding: 70px;
 	margin: 50px;
-	border: 4px dotted #aaa;
+	border: 4px dotted #B92626;
 	text-align: center;
 	color:white;
 }
@@ -37,5 +37,5 @@ h2 {
 }
 
 #guessed {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
