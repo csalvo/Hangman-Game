@@ -10,6 +10,7 @@ var usedLetters;
 function gameStart() {
 	usedLetters = [];
 	guesses = 12;
+    document.getElementById("guesses-remaining").innerHTML = guesses;
 	document.getElementById("guessed").innerHTML = usedLetters;
 	var wordIndex = Math.floor(Math.random() * words.length + 1);
 	chosenWord = words[wordIndex].toLowerCase().split("");
@@ -40,11 +41,15 @@ function gamePlay() {
 
 				}
 				//if there are, add them to the array
-				else if (guesses > 0) {
+				else if (guesses > 0 && usedLetters.indexOf(event.key.toUpperCase()) === -1) {
 					usedLetters.push(event.key.toUpperCase());
         			document.getElementById("guessed").innerHTML = usedLetters.join(", ");
-        			guesses--
+        			guesses -- 
         			document.getElementById("guesses-remaining").innerHTML = guesses;
+        		}
+
+        		else if (guesses > 0 && usedLetters.indexOf(event.key.toUpperCase()) >= 0) {
+        			alert("You already guessed this letter!")
         		}
 		}
 //if the letter is in the word, find the indexes of everywhere it appears in the word, then place those into the word	
@@ -74,8 +79,18 @@ function gamePlay() {
 		} 
 	}
 }
+
+//starting and playing the game
+	if (document.getElementById("hiddenWord").innerHTML === "Press any key to start") {
+		document.onkeyup = function(event) {
 			gameStart();
 			gamePlay();
+		}
+	}
+
+	else if (document.getElementById("hiddenWord").innerHTML !== "Press any key to start") {
+		gamePlay();
+	}
 
 //press any key to start
 //fix bug where the last letter doesn't display before ending thegame
