@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hangman Game</title>
-	<link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Hangman Game</title>
+  <link href="assets/css/reset.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-		<div>
-		<img class="logo" src="assets/images/wine.png">
-		<section>
-		<p class="score">Score: <span id="score"> 0 </span>
-		</section>
-		</div>
-
-		<div class="gamePlay">
-		<h2>Current Wine Word: </h2>
-		<p id="hiddenWord">Press any key to start</p>
-		<h2 class="guesses-left">Guesses Remaining: <span id="guesses-remaining">12</span></h2>
-		<h2 class="used-letters">Letters already guessed: </h2>
-		<p id="guessed"> </p>
-		</div>
-
-  <script src="assets/javascript/game.js"></script>
+  <div>
+    <img class="logo" src="assets/images/wine.png">
+    <section>
+      <p class="score">Score: <span id="score">0</span></p>
+    </section>
+  </div>
+  <div class="gamePlay">
+    <h2>Current Wine Word:</h2>
+    <p id="hiddenWord">Press any key to start</p>
+    <h2 class="guesses-left">Guesses Remaining: <span id="guesses-remaining">12</span></h2>
+    <h2 class="used-letters">Letters already guessed:</h2>
+    <p id="guessed"></p>
+  </div>
+  <script src="assets/javascript/game.js">
+  </script>
 </body>
 </html>
